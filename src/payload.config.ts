@@ -1,4 +1,5 @@
 // storage-adapter-import-placeholder
+// AVA Collections v1.0
 import { postgresAdapter } from '@payloadcms/db-postgres'
 
 import sharp from 'sharp' // sharp-import
