@@ -5,7 +5,7 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "build": "payload migrate:fresh && payload generate:importmap && cross-env NODE_OPTIONS=--no-deprecation next build",
+    "build": "payload generate:importmap && cross-env NODE_OPTIONS=--no-deprecation next build",
     "deps:native": "corepack pnpm rebuild sharp esbuild",
     "dev": "cross-env NODE_OPTIONS=--no-deprecation next dev",
     "dev:prod": "cross-env NODE_OPTIONS=--no-deprecation rm -rf .next && pnpm build && pnpm start",
@@ -17,7 +17,7 @@
     "lint:fix": "cross-env NODE_OPTIONS=--no-deprecation next lint --fix",
     "payload": "cross-env NODE_OPTIONS=--no-deprecation payload",
     "reinstall": "cross-env NODE_OPTIONS=--no-deprecation rm -rf node_modules && rm pnpm-lock.yaml && pnpm --ignore-workspace install",
-    "start": "cross-env NODE_OPTIONS=--no-deprecation next start",
+    "start": "payload migrate:fresh && cross-env NODE_OPTIONS=--no-deprecation next start",
     "test:e2e": "playwright test",
     "test:e2e:headed": "playwright test --headed",
     "test:e2e:manual": "cross-env PLAYWRIGHT_SLOW_MO=750 E2E_MANUAL_REVIEW=true playwright test --headed --workers=1"
